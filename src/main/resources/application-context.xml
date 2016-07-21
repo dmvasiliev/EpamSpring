@@ -3,4 +3,17 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean class="quoters.ShakeSpearQuoter" id="shakespearQuoter">
+        <property name="message" value="2 b || ! 2 b"/>
+    </bean>
+
+    <bean class="quoters.TerminatorQuoter" id="terminatorQuoter">
+        <property name="messages">
+            <list>
+                <value>I'll be back</value>
+                <value>Trust me</value>
+            </list>
+        </property>
+    </bean>
+
 </beans>
