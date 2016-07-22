@@ -16,4 +16,13 @@
         </property>
     </bean>
 
+    <bean class="quoters.TalkingRobotImpl" id="talkingRobot" init-method="talk">
+        <property name="quoterList">
+            <list>
+                <ref bean="terminatorQuoter"/>
+                <ref bean="shakespearQuoter"/>
+            </list>
+        </property>
+    </bean>
+
 </beans>
