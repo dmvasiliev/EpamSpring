@@ -3,6 +3,8 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+
     <bean class="java.lang.String" id="astalavista">
         <constructor-arg value="ASTALAVISTA BABY"/>
     </bean>
@@ -26,7 +28,7 @@
         </property>
     </bean>
 
-    <bean class="evBorisov.epamSpring.quoters.TalkingRobotImpl" id="talkingRobot" init-method="talk">
+    <bean class="evBorisov.epamSpring.quoters.TalkingRobotImpl" id="talkingRobot">
         <property name="quoterList">
             <list>
                 <ref bean="terminatorQuoter"/>

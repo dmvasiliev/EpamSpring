@@ -1,5 +1,6 @@
 package evBorisov.epamSpring.quoters;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -7,7 +8,7 @@ import java.util.List;
  */
 public class TerminatorQuoter implements Quoter {
 
-    private List<String> messages;
+    private List<String> messages = Arrays.asList("полюбому");
 
     public void sayQuote() {
         for (String message : messages) {

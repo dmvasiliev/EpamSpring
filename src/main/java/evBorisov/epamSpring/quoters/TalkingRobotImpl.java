@@ -1,5 +1,6 @@
 package evBorisov.epamSpring.quoters;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 
 /**
@@ -8,6 +9,7 @@ import java.util.List;
 public class TalkingRobotImpl implements TalkingRobot {
     private List<Quoter> quoterList;
 
+    @PostConstruct
     public void talk() {
         for (Quoter quoter : quoterList) {
             quoter.sayQuote();
