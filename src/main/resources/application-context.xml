@@ -3,6 +3,15 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean class="java.lang.String" id="astalavista">
+        <constructor-arg value="ASTALAVISTA BABY"/>
+    </bean>
+
+    <bean class="focus.Person">
+        <constructor-arg name="фамилия" value="Васильев"/>
+        <constructor-arg name="имя" value="Дима"/>
+    </bean>
+
     <bean class="quoters.ShakeSpearQuoter" id="shakespearQuoter">
         <property name="message" value="2 b || ! 2 b"/>
     </bean>
@@ -12,6 +21,7 @@
             <list>
                 <value>I'll be back</value>
                 <value>Trust me</value>
+                <ref bean="astalavista"/>
             </list>
         </property>
     </bean>
