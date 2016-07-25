@@ -1,5 +1,7 @@
 package evBorisov.epamSpring.quoters;
 
+import evBorisov.epamSpring.fraemwork.RunThisMethod;
+
 import javax.annotation.PostConstruct;
 import java.util.List;
 
@@ -10,6 +12,7 @@ public class TalkingRobotImpl implements TalkingRobot {
     private List<Quoter> quoterList;
 
     @PostConstruct
+    @RunThisMethod
     public void talk() {
         for (Quoter quoter : quoterList) {
             quoter.sayQuote();
