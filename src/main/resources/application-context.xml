@@ -7,16 +7,16 @@
         <constructor-arg value="ASTALAVISTA BABY"/>
     </bean>
 
-    <bean class="focus.Person">
+    <bean class="evBorisov.epamSpring.focus.Person">
         <constructor-arg name="фамилия" value="Васильев"/>
         <constructor-arg name="имя" value="Дима"/>
     </bean>
 
-    <bean class="quoters.ShakeSpearQuoter" id="shakespearQuoter">
+    <bean class="evBorisov.epamSpring.quoters.ShakeSpearQuoter" id="shakespearQuoter">
         <property name="message" value="2 b || ! 2 b"/>
     </bean>
 
-    <bean class="quoters.TerminatorQuoter" id="terminatorQuoter">
+    <bean class="evBorisov.epamSpring.quoters.TerminatorQuoter" id="terminatorQuoter">
         <property name="messages">
             <list>
                 <value>I'll be back</value>
@@ -26,7 +26,7 @@
         </property>
     </bean>
 
-    <bean class="quoters.TalkingRobotImpl" id="talkingRobot" init-method="talk">
+    <bean class="evBorisov.epamSpring.quoters.TalkingRobotImpl" id="talkingRobot" init-method="talk">
         <property name="quoterList">
             <list>
                 <ref bean="terminatorQuoter"/>
