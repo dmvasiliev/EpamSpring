@@ -17,20 +17,21 @@ public class BenchmarkBeanPostProcessor implements BeanPostProcessor {
 
     public Object postProcessAfterInitialization(final Object o, String s) throws BeansException {
         Class clazz = o.getClass();
-        if (clazz.isAnnotationPresent(Benchmark.class)) {
-            Object proxy = Proxy.newProxyInstance(clazz.getClassLoader(), clazz.getInterfaces(), new InvocationHandler() {
-                public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                    long before = System.nanoTime();
-                    Object retVal = method.invoke(o, args);
-                    long after = System.nanoTime();
-                    System.out.println(after - before);
-                    return retVal;
-                }
-            });
-            return proxy;
-        } else {
-            return o;
-        }
-
+        Method[] methods = clazz.getMethods();
+        Object proxy = null;
+        for (Method method : methods) {
+            if (method.isAnnotationPresent(Benchmark.class)) {
+                proxy = Proxy.newProxyInstance(clazz.getClassLoader(), clazz.getInterfaces(), new InvocationHandler() {
+                    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                        long before = System.nanoTime();
+                        Object retVal = method.invoke(o, args);
+                        long after = System.nanoTime();
+                        System.out.println(after - before);
+                        return retVal;
+                    }
+                });
+            }
+            }
+            return proxy != null ? proxy : o;
     }
 }

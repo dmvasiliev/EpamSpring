@@ -1,20 +1,18 @@
 package evBorisov.epamSpring.quoters;
 
 import evBorisov.epamSpring.fraemwork.Benchmark;
-import evBorisov.epamSpring.fraemwork.RunThisMethod;
 
-import javax.annotation.PostConstruct;
 import java.util.List;
 
 /**
  * Created by VasDA on 22.07.2016.
  */
-@Benchmark
 public class TalkingRobotImpl implements TalkingRobot {
     private List<Quoter> quoterList;
 
-    @PostConstruct
-    @RunThisMethod
+    //    @PostConstruct
+//    @RunThisMethod
+    @Benchmark
     public void talk() {
         for (Quoter quoter : quoterList) {
             quoter.sayQuote();
