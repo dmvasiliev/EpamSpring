@@ -19,8 +19,7 @@ public class DeprecatedReplaceBeanFactoryPostProcessor implements BeanFactoryPos
                 Class<?> originalClass = Class.forName(originalClassName);
                 MyDeprecated annotation = originalClass.getAnnotation(MyDeprecated.class);
                 if (annotation != null) {
-                    Class newClass = annotation.newClass();
-                    beanDefinition.setBeanClassName(newClass.getName());
+                    beanDefinition.setBeanClass(annotation.newClass());
                 }
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
