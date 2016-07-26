@@ -8,6 +8,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext  classPathXmlApplicationContext = new ClassPathXmlApplicationContext("application-context.xml");
+//        Quoter shakespearQuoter = classPathXmlApplicationContext.getBean("talkingRobot", Quoter.class);
+//        shakespearQuoter.sayQuote();
+
+        TalkingRobot talkingRobot = classPathXmlApplicationContext.getBean(TalkingRobot.class);
+        talkingRobot.talk();
+
+
 //        ShakeSpearQuoter bean = classPathXmlApplicationContext.getBean(ShakeSpearQuoter.class);
 //        bean.sayQuote();
 //
