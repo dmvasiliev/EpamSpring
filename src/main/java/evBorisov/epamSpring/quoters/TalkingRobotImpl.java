@@ -8,14 +8,13 @@ import java.util.List;
 /**
  * Created by VasDA on 22.07.2016.
  */
+@Transactional
 public class TalkingRobotImpl implements TalkingRobot {
     private List<Quoter> quoterList;
 
     //    @PostConstruct
 //    @RunThisMethod
-
     @Benchmark
-    @Transactional
     public void talk() {
         for (Quoter quoter : quoterList) {
             quoter.sayQuote();

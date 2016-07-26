@@ -17,34 +17,16 @@ public class TransactionalBeanPostProcessor implements BeanPostProcessor {
 
     public Object postProcessAfterInitialization(final Object o, String s) throws BeansException {
         Class clazz = o.getClass();
-        Method[] methods = clazz.getMethods();
-        boolean benchmarkFound = false;
-        for (Method method : methods) {
-            if (method.isAnnotationPresent(Transactional.class)) {
-                benchmarkFound = true;
-                break;
-            }
-        }
 
-        if (benchmarkFound) {
-            Object proxy = Proxy.newProxyInstance(clazz.getClassLoader(), clazz.getInterfaces(), new InvocationHandler() {
-
+        if (clazz.isAnnotationPresent(Transactional.class)) {
+            return Proxy.newProxyInstance(clazz.getClassLoader(), clazz.getInterfaces(), new InvocationHandler() {
                 public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                    Method originalClassMethod = o.getClass().getMethod(method.getName(), method.getParameterTypes());
-                    if (originalClassMethod.isAnnotationPresent(Transactional.class)) {
-                        System.out.println("Начало транзакции");
-                        long before = System.nanoTime();
-                        Object retVal = method.invoke(o, args);
-                        long after = System.nanoTime();
-                        System.out.println("Конец транзакции");
-                        System.out.println(after - before);
-                        return retVal;
-                    } else {
-                        return method.invoke(o, args);
-                    }
+                    System.out.println("Transaction opened");
+                    Object retVal = method.invoke(o, args);
+                    System.out.println("Transaction closed");
+                    return retVal;
                 }
             });
-            return proxy;
         }
         return o;
     }
