@@ -1,11 +1,14 @@
 package evBorisov.epamSpring.quoters;
 
+import evBorisov.epamSpring.fraemwork.MyDeprecated;
+
 import java.util.Arrays;
 import java.util.List;
 
 /**
  * Created by Dmitry on 22.07.2016.
  */
+@MyDeprecated(newClass = T1000.class)
 public class TerminatorQuoter implements Quoter {
 
     private List<String> messages = Arrays.asList("полюбому");
