@@ -3,6 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean class="evBorisov.epamSpring.fraemwork.WarningBeanFactoryPostProcessor"/>
 
     <bean class="evBorisov.epamSpring.fraemwork.BenchmarkBeanPostProcessor"/>
     <bean class="evBorisov.epamSpring.fraemwork.TransactionalBeanPostProcessor"/>
@@ -20,7 +21,8 @@
         <constructor-arg name="имя" value="Дима"/>
     </bean>
 
-    <bean class="evBorisov.epamSpring.quoters.ShakeSpearQuoter" id="shakespearQuoter">
+    <bean class="evBorisov.epamSpring.quoters.ShakeSpearQuoter" id="shakespearQuoter" destroy-method="sayQuote"
+          scope="prototype">
         <property name="message" value="2 b || ! 2 b"/>
     </bean>
 
