@@ -4,7 +4,9 @@ package evBorisov.epamSpring.reflections;
  * Created by Dmitry on 19.07.2016.
  */
 public class Person {
+
     private String name;
+
     @Inject(min = 300, max = 350)
     private int age;
 
