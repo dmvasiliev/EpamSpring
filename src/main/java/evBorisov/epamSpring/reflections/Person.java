@@ -5,6 +5,7 @@ package evBorisov.epamSpring.reflections;
  */
 public class Person {
     private String name;
+    @Inject(min = 300, max = 350)
     private int age;
 
     public Person() {
