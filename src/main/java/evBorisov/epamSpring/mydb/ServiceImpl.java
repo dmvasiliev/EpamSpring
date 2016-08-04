@@ -11,6 +11,7 @@ import javax.annotation.PostConstruct;
 @Service
 public class ServiceImpl implements DbService {
     @Autowired
+    @Oracle
     private Dao dao;
 
     @PostConstruct
