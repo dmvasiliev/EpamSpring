@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.stereotype.Component;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -13,6 +14,7 @@ import java.lang.reflect.Proxy;
 /**
  * Created by Dmitry on 26.07.2016.
  */
+@Component
 public class BenchmarkBeanPostProcessor implements BeanPostProcessor {
 
     @Autowired

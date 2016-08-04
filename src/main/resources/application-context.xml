@@ -4,7 +4,7 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean class="evBorisov.epamSpring.fraemwork.DeprecatedReplaceBeanFactoryPostProcessor"/>
+    <!--<bean class="evBorisov.epamSpring.fraemwork.DeprecatedReplaceBeanFactoryPostProcessor"/>
 
     <bean class="evBorisov.epamSpring.fraemwork.WarningBeanFactoryPostProcessor"/>
 
@@ -13,7 +13,10 @@
     <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
 
     <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
-    <bean class="evBorisov.epamSpring.fraemwork.RunThisMethodAnnotationBeanPostProcessor" id="myBeanPostProcessor"/>
+    <bean class="evBorisov.epamSpring.fraemwork.RunThisMethodAnnotationBeanPostProcessor" id="myBeanPostProcessor"/>-->
+
+    <context:component-scan base-package="evBorisov.epamSpring.quoters"/>
+    <context:component-scan base-package="evBorisov.epamSpring.fraemwork"/>
 
     <context:property-placeholder location="classpath:quotes.properties"/>
 
@@ -41,13 +44,13 @@
         </property>
     </bean>
 
-    <bean class="evBorisov.epamSpring.quoters.TalkingRobotImpl" id="talkingRobot">
-        <property name="quoterList">
-            <list>
-                <ref bean="terminatorQuoter"/>
-                <ref bean="shakespearQuoter"/>
-            </list>
-        </property>
-    </bean>
+    <!--    <bean class="evBorisov.epamSpring.quoters.TalkingRobotImpl" id="talkingRobot">
+            <property name="quoterList">
+                <list>
+                    <ref bean="terminatorQuoter"/>
+                    <ref bean="shakespearQuoter"/>
+                </list>
+            </property>
+        </bean>-->
 
 </beans>

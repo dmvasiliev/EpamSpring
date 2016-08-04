@@ -2,6 +2,7 @@ package evBorisov.epamSpring.fraemwork;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.stereotype.Component;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -12,6 +13,7 @@ import java.util.Map;
 /**
  * Created by VasDA on 26.07.2016.
  */
+@Component
 public class TransactionalBeanPostProcessor implements BeanPostProcessor {
 
     private Map<String, Class> map = new HashMap<String, Class>();
