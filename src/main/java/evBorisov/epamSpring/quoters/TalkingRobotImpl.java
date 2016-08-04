@@ -24,12 +24,4 @@ public class TalkingRobotImpl implements TalkingRobot {
             quoter.sayQuote();
         }
     }
-
-    public List<Quoter> getQuoterList() {
-        return quoterList;
-    }
-
-    public void setQuoterList(List<Quoter> quoterList) {
-        this.quoterList = quoterList;
-    }
 }
