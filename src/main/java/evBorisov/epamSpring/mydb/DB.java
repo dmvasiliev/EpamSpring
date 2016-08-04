@@ -14,5 +14,6 @@ import java.lang.annotation.RetentionPolicy;
 @Qualifier
 @Repository
 @Autowired
-public @interface Oracle {
+public @interface DB {
+    DBType value();
 }

@@ -10,7 +10,7 @@ import javax.annotation.PostConstruct;
 @Service
 public class ServiceImpl implements DbService {
 
-    @Derby
+    @DB(DBType.DERBY)
     private Dao dao;
 
     @PostConstruct
