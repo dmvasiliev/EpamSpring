@@ -1,4 +1,4 @@
-package evBorisov.epamJava.Twow;
+package evBorisov.epamJava.two;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -10,7 +10,7 @@ public class GarbColl {
 
     //-verbose:gc -Xmx64m -Xms64m
     public static void main(String[] args) {
-        ArrayList<StringBuilder> stringBuilders = new ArrayList<>();
+        ArrayList<StringBuilder> stringBuilders = new ArrayList<StringBuilder>();
         for (int i = 0; i < 10000000; i++) {
             stringBuilders.add(new StringBuilder("sdfsdsd"));
         }
