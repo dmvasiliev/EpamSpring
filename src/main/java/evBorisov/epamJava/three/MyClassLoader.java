@@ -5,10 +5,16 @@ package evBorisov.epamJava.three;
  */
 public class MyClassLoader extends ClassLoader {
 
+//    @Override
+//    protected Class<?> findClass(String name) throws ClassNotFoundException {
+//        System.out.println("print time before find class: " + System.currentTimeMillis());
+//        return super.findClass(name);
+//    }
+
     @Override
-    protected Class<?> findClass(String name) throws ClassNotFoundException {
-        System.out.println("print time before find class return: " + System.currentTimeMillis());
-        return super.findClass(name);
+    public Class<?> loadClass(String name) throws ClassNotFoundException {
+        System.out.println("print time before load class: " + System.currentTimeMillis());
+        return super.loadClass(name);
     }
 
     public static void main(String[] args) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
