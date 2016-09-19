@@ -7,13 +7,13 @@ package evBorisov.epamJava.four;
 public class Benchmark {
 
     public static void main(String[] args) {
-        long before = System.currentTimeMillis();
+        long before = System.nanoTime();
         int rep = 10000000;
         double sqrt = 0;
         for (int i = 0; i < rep; i++) {
             sqrt = Math.sqrt(i);
         }
-        long after = System.currentTimeMillis();
+        long after = System.nanoTime();
         System.out.println(sqrt);
         System.out.println(after - before);
     }
