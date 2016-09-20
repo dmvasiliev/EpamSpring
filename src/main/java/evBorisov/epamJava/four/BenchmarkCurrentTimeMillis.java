@@ -5,6 +5,7 @@ package evBorisov.epamJava.four;
  */
 public class BenchmarkCurrentTimeMillis {
 
+    //ToDo -XX:+PrintCompilation
     public static void main(String[] args) throws InterruptedException {
         long before = System.currentTimeMillis();
         Thread.sleep(1);

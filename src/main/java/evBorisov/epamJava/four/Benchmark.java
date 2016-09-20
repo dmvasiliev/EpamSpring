@@ -6,6 +6,8 @@ package evBorisov.epamJava.four;
 
 public class Benchmark {
 
+
+    //ToDo http://www.reins.altervista.org/java/A_Collection_of_JVM_Options_MP.html
     public static void main(String[] args) {
 //        double sqrt1 = Math.sqrt(4);
 
