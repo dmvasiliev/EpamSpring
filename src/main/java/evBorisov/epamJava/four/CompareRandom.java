@@ -23,7 +23,7 @@ public class CompareRandom {
         }
 
         rep = 1000000;
-        //ToDo реальный замер
+        //ToDo реальный замер(разогретого кода)
         long before = System.nanoTime();
         for (int i = 0; i < rep; i++) {
             random = Math.random();
