@@ -26,5 +26,9 @@ public class OrderedPair<K, V> implements Pair<K, V> {
         Pair<String, String> p2 = new OrderedPair<String, String>("hello", "world");
         System.out.println(p1);
         System.out.println(p2);
+
+        OrderedPair<String, Box<Integer>> p = new OrderedPair<>("primes", new Box<Integer>());
+        p.getValue().set(15);
+        System.out.println(p.getKey() + " : " + p.getValue().get());
     }
 }
