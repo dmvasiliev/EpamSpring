@@ -8,6 +8,7 @@ public class Benchmark {
 
 
     //ToDo http://www.reins.altervista.org/java/A_Collection_of_JVM_Options_MP.html
+    //ToDo  -XX:CompileCommandFile=.hotspot_compiler
     public static void main(String[] args) {
 //        double sqrt1 = Math.sqrt(4);
 
