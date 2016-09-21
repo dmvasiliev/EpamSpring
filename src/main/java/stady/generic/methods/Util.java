@@ -1,4 +1,4 @@
-package stady.generic.genericMethods;
+package stady.generic.methods;
 
 /**
  * Created by VasDA on 21.09.2016.
