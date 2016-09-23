@@ -1,4 +1,4 @@
-package core.generic.bitlogic;
+package core.bitlogic;
 
 /**
  * Created by VasDA on 22.09.2016.
