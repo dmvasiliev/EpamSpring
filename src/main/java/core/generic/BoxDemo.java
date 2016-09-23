@@ -1,6 +1,7 @@
 package core.generic;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -22,11 +23,29 @@ public class BoxDemo {
         }
     }
 
+    public static void printList(List<?> list) {
+        for (Object elem : list) {
+            System.out.print(elem + " ");
+        }
+        System.out.println();
+    }
+
     public static void main(String[] args) {
         ArrayList<Box<Integer>> listOfIntegerBoxes = new ArrayList<>();
         BoxDemo.<Integer>addBox(Integer.valueOf(10), listOfIntegerBoxes);
         BoxDemo.addBox(Integer.valueOf(20), listOfIntegerBoxes);
         BoxDemo.addBox(Integer.valueOf(30), listOfIntegerBoxes);
         BoxDemo.outputBoxes(listOfIntegerBoxes);
+
+
+        List<Integer> li = Arrays.asList(1, 2, 3);
+        List<String> ls = Arrays.asList("one", "two", "three");
+        printList(li);
+        printList(ls);
+
+
+        List<?> onlyNull = new ArrayList<Integer>();
+        //ToDO Important
+        //onlyNull.add(new Integer(10));
     }
 }
