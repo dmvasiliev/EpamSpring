@@ -1,4 +1,4 @@
-package stady.generic.boundedTypeParameters;
+package core.generic.boundedTypeParameters;
 
 /**
  * Created by VasDA on 21.09.2016.

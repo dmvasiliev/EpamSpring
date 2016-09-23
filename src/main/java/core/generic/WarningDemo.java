@@ -1,4 +1,4 @@
-package stady.generic;
+package core.generic;
 
 /**
  * Created by VasDA on 21.09.2016.

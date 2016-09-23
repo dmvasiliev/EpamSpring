@@ -1,4 +1,4 @@
-package stady.generic.bitlogic;
+package core.generic.bitlogic;
 
 /**
  * Created by VasDA on 22.09.2016.

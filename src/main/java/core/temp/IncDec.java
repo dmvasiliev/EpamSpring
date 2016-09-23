@@ -1,4 +1,4 @@
-package stady.generic.temp;
+package core.temp;
 
 /**
  * Created by VasDA on 22.09.2016.

@@ -1,4 +1,4 @@
-package stady.generic.temp;
+package core.temp;
 
 import java.util.TreeMap;
 
