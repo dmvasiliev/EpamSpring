@@ -18,8 +18,9 @@ public class ArrayCopyDemo {
         System.arraycopy(arr1, 0, arr3, 0, 6);
         System.arraycopy(arr2, 0, arr3, 6 - 1, 6);
         for (int i : arr3) {
-            System.out.println(i + ", ");
+            System.out.print(i + ", ");
         }
+
 
 
 /*        System.out.print("array2 = ");
