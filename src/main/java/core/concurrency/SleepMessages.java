@@ -15,7 +15,14 @@ public class SleepMessages {
         for (int i = 0; i < importantInfo.length; i++) {
             //Pause for 4 seconds
             try {
+                if (Thread.interrupted()) {
+                    throw new InterruptedException();
+                }
+                if (!Thread.currentThread().isInterrupted()) {
+                    System.out.println("флаг isInterrupted небыл установлен");
+                }
                 Thread.sleep(4 * 1000);
+
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
