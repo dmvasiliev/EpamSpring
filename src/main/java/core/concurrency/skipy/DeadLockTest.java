@@ -1,4 +1,4 @@
-package core.concurrency.habrahabr.skipy;
+package core.concurrency.skipy;
 
 /**
  * Created by Dmitry on 03.03.2017.
