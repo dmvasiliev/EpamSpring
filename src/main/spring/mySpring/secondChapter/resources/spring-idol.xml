@@ -117,8 +117,7 @@
         <bean class="mySpring.secondChapter.springidol.Song">
             <constructor-arg value="Magic Carpet Ride"/>
             <constructor-arg value="Moreve and Kay"/>
-            <constructor-arg value=
-                                     "I like to dream yes, yes, right between my sound machine..."/>
+            <constructor-arg value="I like to dream yes, yes, right between my sound machine..."/>
         </bean>
     </util:list>
 
