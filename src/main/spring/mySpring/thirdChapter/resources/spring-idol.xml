@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+
+    <!--    <bean id="taylor" class="mySpring.thirdChapter.Vocalist">
+            <property name="song" value="Somewhere Over the Rainbow"/>
+        </bean>-->
+
+    <bean id="basePerformer" abstract="true">
+        <property name="song" value="Somewhere Over the Rainbow"/>
+    </bean>
+
+    <bean id="guitarr" class="mySpring.thirdChapter.Guitar"
+          scope="prototype">
+    </bean>
+
+    <!--    <bean id="stevie" class="mySpring.thirdChapter.Instrumentalist">
+            <property name="instrument" ref="guitar"/>
+            <property name="song" value="Somewhere Over the Rainbow"/>
+        </bean>-->
+
+    <bean id="taylor"
+          class="mySpring.thirdChapter.Vocalist"
+          parent="basePerformer"/>
+    <bean id="stevie"
+          class="mySpring.thirdChapter.Instrumentalist"
+          parent="basePerformer">
+        <property name="instrument" ref="guitarr"/>
+    </bean>
+
+    <bean id="harry" class="mySpring.thirdChapter.Magician">
+        <property name="magicBox" ref="magicBox"/>
+        <property name="magicWords" value="Bippity boppity boo"/>
+    </bean>
+    <bean id="magicBox" class="mySpring.thirdChapter.MagicBoxImpl">
+        <replaced-method name="getContents" replacer="tigerReplacer"/>
+    </bean>
+    <bean id="tigerReplacer" class="mySpring.thirdChapter.TigerReplacer"/>
+
+
+    <bean id="stevie2" class="mySpring.thirdChapter.Instrumentalist2">
+        <lookup-method name="getInstrument" bean="guitarr"/>
+        <property name="song" value="Greensleeves"/>
+    </bean>
+
+
+    <bean id="pianist"
+          class="mySpring.thirdChapter.Instrumentalist"
+          abstract="true">
+        <property name="song" value="Chopsticks"/>
+        <property name="instrument">
+            <bean class="mySpring.thirdChapter.Piano"/>
+        </property>
+    </bean>
+
+
+    <bean class="mySpring.thirdChapter.postprocessor.Fuddifier"/>
+
+    <bean id="bugs" class="mySpring.thirdChapter.postprocessor.Rabbit">
+        <property name="description" value="That rascally rabbit!"/>
+    </bean>
+
+    <bean id="beanCounter"
+          class="mySpring.thirdChapter.postprocessor.BeanCounter"/>
+</beans>
