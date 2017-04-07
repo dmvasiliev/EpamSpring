@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       xmlns:lang="http://www.springframework.org/schema/lang"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://www.springframework.org/schema/lang
+       http://www.springframework.org/schema/lang/spring-lang-2.0.xsd"
 >
 
     <!--    <bean id="taylor" class="mySpring.thirdChapter.Vocalist">
@@ -64,4 +67,20 @@
 
     <bean id="beanCounter"
           class="mySpring.thirdChapter.postprocessor.BeanCounter"/>
+
+
+    <bean id="coconut" class="mySpring.thirdChapter.scripting.Coconut">
+        <property name="lime" ref="lime"/>
+    </bean>
+
+    <lang:groovy id="lime"
+                 script-source="classpath:mySpring/thirdChapter/scripting/groovy/Lime.groovy"/>
+
+    <bean id="lime2" class="mySpring.thirdChapter.scripting2.LimeImpl"/>
+
+    <lang:groovy id="coconut2"
+                 script-source="classpath:mySpring/thirdChapter/scripting2/Coconut.groovy">
+        <lang:property name="lime" ref="lime2"/>
+    </lang:groovy>
+
 </beans>
