@@ -1,8 +1,6 @@
 package mySpring.fourthChapter2.springidol;
 
-import org.springframework.beans.factory.annotation.Qualifier;
-
-@Qualifier("stringed")
+@StringedInstrument
 public class Guitar implements Instrument {
     public Guitar() {
     }

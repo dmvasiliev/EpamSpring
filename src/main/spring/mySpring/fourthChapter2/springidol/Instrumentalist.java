@@ -25,7 +25,9 @@ public class Instrumentalist implements Performer {
         return song;
     }
 
-    @Autowired(required = false)
+    @Autowired
+    @StringedInstrument
+    @Strummed
     private Instrument instrument;
 
     public void setInstrument(Instrument instrument) {
