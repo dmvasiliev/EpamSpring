@@ -1,4 +1,4 @@
-package mySpring.fourthChapter3;
+package mySpring.fourthChapterAnnotation;
 
 import org.springframework.stereotype.Component;
 

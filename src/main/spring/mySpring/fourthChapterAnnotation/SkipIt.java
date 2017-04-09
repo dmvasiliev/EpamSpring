@@ -1,4 +1,4 @@
-package mySpring.fourthChapter3;
+package mySpring.fourthChapterAnnotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

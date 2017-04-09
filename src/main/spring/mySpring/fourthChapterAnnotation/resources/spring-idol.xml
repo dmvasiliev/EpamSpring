@@ -8,16 +8,16 @@
      http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!--    <context:component-scan
-                base-package="mySpring.fourthChapter3">
+                base-package="mySpring.fourthChapterAnnotation">
         </context:component-scan>-->
 
 
     <context:component-scan
-            base-package="mySpring.fourthChapter3">
+            base-package="mySpring.fourthChapterAnnotation">
         <context:include-filter type="assignable"
-                                expression="mySpring.fourthChapter3.Instrument"/>
+                                expression="mySpring.fourthChapterAnnotation.Instrument"/>
         <context:exclude-filter type="annotation"
-                                expression="mySpring.fourthChapter3.SkipIt"/>
+                                expression="mySpring.fourthChapterAnnotation.SkipIt"/>
     </context:component-scan>
 
 </beans>

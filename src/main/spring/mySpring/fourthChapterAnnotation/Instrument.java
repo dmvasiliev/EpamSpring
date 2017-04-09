@@ -1,4 +1,4 @@
-package mySpring.fourthChapter3;
+package mySpring.fourthChapterAnnotation;
 
 public interface Instrument {
     public void play();
