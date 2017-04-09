@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"
+>
+
+    <bean id="kenny2"
+          class="mySpring.fourthChapter.springidol.Instrumentalist">
+        <property name="song" value="Jingle Bells"/>
+        <property name="instrument" ref="saxophone"/>
+    </bean>
+
+    <bean id="saxophone" class="mySpring.fourthChapter.springidol.Saxophone"
+          autowire-candidate="false"/>
+
+
+    <bean id="instrument"
+          class="mySpring.fourthChapter.springidol.Saxophone"/>
+
+
+    <bean id="kenny"
+          class="mySpring.fourthChapter.springidol.Instrumentalist"
+          autowire="byName">
+        <property name="song" value="Jingle Bells"/>
+    </bean>
+
+    <bean id="kenny3"
+          class="mySpring.fourthChapter.springidol.Instrumentalist"
+          autowire="byType">
+        <property name="song" value="Jingle Bells"/>
+    </bean>
+
+    <bean id="duke"
+          class="mySpring.fourthChapter.springidol.PoeticJuggler"
+          autowire="constructor"/>
+
+    <bean id="sonnet29" class="mySpring.fourthChapter.springidol.Sonnet29"/>
+
+
+    <bean id="kenny4"
+          class="mySpring.fourthChapter.springidol.Instrumentalist"
+          autowire="byType">
+        <property name="song" value="Jingle Bells"/>
+        <property name="instrument" ref="saxophone"/>
+    </bean>
+
+    <!--    <bean id="kenny5"
+              class="mySpring.fourthChapter.springidol.Instrumentalist"
+              autowire="byType">
+            <property name="song" value="Jingle Bells" />
+            <property name="instrument"><null/></property>
+        </bean>-->
+
+</beans>
