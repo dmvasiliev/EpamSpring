@@ -1,73 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:util="http://www.springframework.org/schema/util"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans.xsd
+     http://www.springframework.org/schema/aop
+     http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <bean id="duke"
-          class="mySpring.fifthChapterAOP.Juggler"/>
-
-    <bean id="poeticDuke"
-          class="mySpring.fifthChapterAOP.PoeticJuggler">
-        <constructor-arg value="15"/>
-        <constructor-arg ref="sonnet29"/>
+    <bean id="eddie" class="mySpring.fifthChapterAOP.Instrumentalist">
+        <property name="instrument">
+            <bean class="mySpring.fifthChapterAOP.Guitar"/>
+        </property>
     </bean>
 
-    <bean id="sonnet29"
-          class="mySpring.fifthChapterAOP.Sonnet29"/>
+    <bean id="audience" class="mySpring.fifthChapterAOP.Audience"/>
 
-    <bean id="kenny"
-          class="mySpring.fifthChapterAOP.Instrumentalist">
-        <property name="song" value="Jingle Bells"/>
-    </bean>
+    <aop:config>
+        <aop:aspect ref="audience">
 
-    <bean id="kenny2"
-          class="mySpring.fifthChapterAOP.Instrumentalist">
-        <property name="song" value="Jingle Bells"/>
-        <property name="instrument" ref="saxophone"/>
-    </bean>
+            <aop:before pointcut="execution(* mySpring.fifthChapterAOP.Performer.perform(..))"
+                        method="takeSeats"/>
 
-    <bean id="carl"
-          class="mySpring.fifthChapterAOP.Instrumentalist">
-        <property name="song" value="#{kenny.screamSong()}"/>
-    </bean>
+            <aop:before pointcut="execution(* mySpring.fifthChapterAOP.Performer.perform(..))"
+                        method="turnOffCellPhones"/>
 
-    <bean id="stan"
-          class="mySpring.fifthChapterAOP.Instrumentalist">
-        <property name="song" value="#{systemProperties.STANS_SONG}"/>
-    </bean>
+            <aop:after-returning pointcut="execution(* mySpring.fifthChapterAOP.Performer.perform(..))"
+                                 method="applaud"/>
 
-    <util:list id="songList">
-        <bean class="mySpring.fifthChapterAOP.Song">
-            <constructor-arg value="That Old Black Magic"/>
-            <constructor-arg value="Arlen and Mercer"/>
-            <constructor-arg value="That old black magic has me in its spell..."/>
-        </bean>
-        <bean class="mySpring.fifthChapterAOP.Song">
-            <constructor-arg value="Every Little Thing She Does is Magic"/>
-            <constructor-arg value="Sting"/>
-            <constructor-arg value="Though Ive tried before to tell her..."/>
-        </bean>
-        <bean class="mySpring.fifthChapterAOP.Song">
-            <constructor-arg value="Magic Carpet Ride"/>
-            <constructor-arg value="Moreve and Kay"/>
-            <constructor-arg value="I like to dream yes, yes, right between my sound machine..."/>
-        </bean>
-    </util:list>
-
-    <bean id="magicSongBook"
-          class="mySpring.fifthChapterAOP.SongBook">
-        <constructor-arg value="#{songList.![title]}"/>
-    </bean>
-
-    <bean id="ricky"
-          class="mySpring.fifthChapterAOP.Instrumentalist">
-        <property name="song" value="#{magicSongBook.pickASong()}"/>
-    </bean>
-
-
-    <bean id="saxophone"
-          class="mySpring.fifthChapterAOP.Saxophone"/>
-
+            <aop:after-throwing pointcut="execution(* mySpring.fifthChapterAOP.Performer.perform(..))"
+                                method="demandRefund"/>
+        </aop:aspect>
+    </aop:config>
 </beans>

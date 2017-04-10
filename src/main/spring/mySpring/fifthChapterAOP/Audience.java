@@ -1,19 +1,19 @@
 package mySpring.fifthChapterAOP;
 
 public class Audience {
-    public void takeSeats() {
+    public void takeSeats() {// Перед выступлением
         System.out.println("The audience is taking their seats.");
     }
 
-    public void turnOffCellPhones() {
+    public void turnOffCellPhones() {// Перед выступлением
         System.out.println("The audience is turning off their cellphones");
     }
 
-    public void applaud() {
+    public void applaud() {// После выступления
         System.out.println("CLAP CLAP CLAP CLAP CLAP");
     }
 
-    public void demandRefund() {
+    public void demandRefund() {// После неудачного выступления
         System.out.println("Boo! We want our money back!");
     }
 }
