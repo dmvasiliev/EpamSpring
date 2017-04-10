@@ -1,4 +1,4 @@
-package mySpring.fifthChapter;
+package mySpring.fifthChapterAOP;
 
 public class Instrumentalist implements Performer {
     public void perform() throws PerformanceException {

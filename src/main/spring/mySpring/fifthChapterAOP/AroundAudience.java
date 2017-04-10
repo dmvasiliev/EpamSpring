@@ -1,4 +1,4 @@
-package mySpring.fifthChapter;
+package mySpring.fifthChapterAOP;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 
@@ -7,16 +7,16 @@ public class AroundAudience {
         try {
             System.out.println("The audience is taking their seats.");
             System.out.println("The audience is turning off their cellphones");
-            long start = System.currentTimeMillis(); //<co id="co_beforeProceed"/>
+            long start = System.currentTimeMillis();
 
-            joinpoint.proceed(); //<co id="co_proceed"/>
+            joinpoint.proceed();
 
-            long end = System.currentTimeMillis(); // <co id="co_afterProceed"/>
+            long end = System.currentTimeMillis();
             System.out.println("CLAP CLAP CLAP CLAP CLAP");
             System.out.println("The performance took " + (end - start)
                     + " milliseconds.");
         } catch (Throwable t) {
-            System.out.println("Boo! We want our money back!"); //<co id="co_afterException"/>
+            System.out.println("Boo! We want our money back!");
         }
     }
 }

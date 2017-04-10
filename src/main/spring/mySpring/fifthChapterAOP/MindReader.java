@@ -1,4 +1,4 @@
-package mySpring.fifthChapter;
+package mySpring.fifthChapterAOP;
 
 public interface MindReader {
     void interceptThoughts(String thoughts);

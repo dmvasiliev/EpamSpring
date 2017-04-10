@@ -1,4 +1,4 @@
-package mySpring.fifthChapter;
+package mySpring.fifthChapterAOP;
 
 public class Volunteer implements Thinker {
     private String thoughts;

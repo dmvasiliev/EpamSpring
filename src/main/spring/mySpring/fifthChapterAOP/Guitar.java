@@ -1,4 +1,4 @@
-package mySpring.fifthChapter;
+package mySpring.fifthChapterAOP;
 
 public class Guitar implements Instrument {
     public void play() {

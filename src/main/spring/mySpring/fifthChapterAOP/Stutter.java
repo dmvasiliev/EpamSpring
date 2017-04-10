@@ -1,4 +1,4 @@
-package mySpring.fifthChapter;
+package mySpring.fifthChapterAOP;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 

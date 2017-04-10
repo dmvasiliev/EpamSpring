@@ -1,5 +1,4 @@
-package mySpring.fifthChapter;
-
+package mySpring.fifthChapterAOP;
 
 public class GraciousContestant implements Contestant {
 

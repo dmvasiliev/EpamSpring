@@ -1,4 +1,4 @@
-package mySpring.fifthChapter;
+package mySpring.fifthChapterAOP;
 
 public interface Performer {
     void perform() throws PerformanceException;
