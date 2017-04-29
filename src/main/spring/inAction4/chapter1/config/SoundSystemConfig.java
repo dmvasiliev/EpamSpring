@@ -5,7 +5,7 @@ import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages = "inAction4.chapter1.out",
+@ComponentScan(basePackages = "inAction4.chapter1",
         excludeFilters = {@Filter(Configuration.class)})
 public class SoundSystemConfig {
 }
