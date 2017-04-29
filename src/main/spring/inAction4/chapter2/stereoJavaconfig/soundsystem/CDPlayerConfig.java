@@ -16,7 +16,7 @@ public class CDPlayerConfig {
         return new CDPlayer(compactDisc);
     }
 
-    @Bean
+/*    @Bean
     public CompactDisc randomBeatlesCD() {
         int choice = (int) Math.floor(Math.random() * 4);
         if (choice == 0) {
@@ -28,6 +28,6 @@ public class CDPlayerConfig {
         } else {
             return new Revolver();
         }
-    }
+    }*/
 
 }
